@@ -54,7 +54,7 @@ else
 fi
 
 echo -e "Starting the $SERVER_NAME ...\c"
-nohup java $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS $JAVA_JMX_OPTS -jar $LIB_DIR/*.jar --server.port=$SERVER_PORT --spring.application.name=$SERVER_NAME --logging.file=$LOGS_FILE --spring.profiles.active=$PROFILES_ACTIVE --spring.config.location=$SPRING_CONFIG_LOCATION > $STDOUT_FILE 2>&1 &
+nohup java $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS $JAVA_JMX_OPTS -jar $LIB_DIR/*.jar --server.port=$SERVER_PORT --spring.application.name=$SERVER_NAME --logging.file=$LOGS_FILE --spring.profiles.active=$PROFILES_ACTIVE --spring.config.location=$SPRING_CONFIG_LOCATION > /dev/null 2>&1 &
 
 echo "OK!"
 PIDS=`ps -ef | grep java | grep "$DEPLOY_DIR" | awk '{print $2}'`
